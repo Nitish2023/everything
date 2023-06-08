@@ -1,5 +1,11 @@
 let highestZ = 1;
 
+var x = document.getElementById("Audio");
+
+function playAudio() {
+  x.play();
+}
+
 class Paper {
   holdingPaper = false;
   touchStartX = 0;
@@ -27,7 +33,7 @@ class Paper {
         this.velX = this.touchMoveX - this.prevTouchX;
         this.velY = this.touchMoveY - this.prevTouchY;
       }
-        
+        playAudio();
       const dirX = e.touches[0].clientX - this.touchStartX;
       const dirY = e.touches[0].clientY - this.touchStartY;
       const dirLength = Math.sqrt(dirX*dirX+dirY*dirY);
